@@ -1,15 +1,16 @@
 import java.io.FileWriter;
 
 public class LinearFibonacci {
+
     public static long fib(int n) {
         if (n <= 1) return n;
-        long prev1 = 0, prev2 = 1, current = 0;
+        long a = 0, b = 1;
         for (int i = 2; i <= n; i++) {
-            current = prev1 + prev2;
-            prev1 = prev2;
-            prev2 = current;
+            long next = a + b;
+            a = b;
+            b = next;
         }
-        return current;
+        return b;
     }
 
     public static void main(String[] args) throws Exception {
